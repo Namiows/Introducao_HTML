@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add ingredients</title>
+</head>
+<body>
+    <h1> Ingredients </h1>
+    <div></div>
+    <script>
+        var ingredients = [];
+
+        var quantity = parseInt(prompt('Quantos ingredientes voce vai adicionar?'));
+        
+        var counter = 1;
+
+        while(counter <= quantity) {
+    
+          var ingredient = prompt('Informe o ingrediente' + counter);
+        
+          var existe = false;
+
+          for(var index =0; index < ingredients.length; index = index + 1) {
+            if (ingredients[index] == ingredient) {
+                existe = true;
+                break
+            }
+          }
+
+          if(existe == false){
+            ingredients.push(ingredient);
+
+            counter = counter + 1;
+          }
+        }
+
+        var selectingDIV = document.querySelector('div');
+        selectingDIV.innerHTML = ingredients;
+        console.log(ingredients)
+
+    </script>
+</body>
+</html>
